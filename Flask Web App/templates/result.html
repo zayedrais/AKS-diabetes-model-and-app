@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Risk Predictor</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes.png') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+    <body>
+        <!-- Website Title -->
+		<div class="container1">
+        <h2 class='container-heading2'><span class="heading_font">Diabetes Risk Predictor</span></h2>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction=='Positive' %}
+				<h1><span class='danger'>SORRY! You have DIABETES.</span></h1>
+			{% elif prediction=='Negative' %}
+				<h1><span class='safe'>Great! You DON'T have DIABETES.</span></h1>
+			{% endif %}
+		</div>
+
+	</body>
+</html>

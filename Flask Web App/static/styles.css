@@ -1,0 +1,106 @@
+html{
+	height: 100%;
+	margin: 0;
+}
+
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	background-color: #c4d5f2;
+	/* display: flex;
+	flex-direction: column; */
+}
+
+/* Website Title */
+.container1{
+    padding: 30px;
+	position: relative;
+	background-color:  #443B96;
+	 /* #F60B68, #F4483A); */
+	background-size: 500% 500%;
+	/* animation: change-gradient 10s ease-in-out infinite; */
+}
+.container-heading1{
+	margin: 0;
+	margin-left: 300px;
+}
+.container-heading2 {
+	margin: 0;
+	margin-left: 40px;
+}
+
+.heading_font{
+    color: #ffffff;
+	/* font-family: 'Pacifico', cursive; */
+	font-size: 35px;
+	font-weight: normal;
+}
+/* Text Area */
+.ml-container{
+    margin: 30px 0;
+	flex: 1 0 auto;
+}
+
+.form-input {
+	text-align: center;
+	width: 250px;
+	height: 25px;
+	margin-bottom: 10px;
+	margin-left: 80px;
+}
+
+
+.feature{
+	text-align: left;
+	width: 50px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+/* Predict Button */
+.my-cta-button{
+	background: #f9f9f9;
+   	border: 2px solid #2b2b2b;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+	margin-top: 10px;
+    padding: 10px 36px;
+    color: #2b2b2b;
+    display: inline-block;
+   	font: italic bold 20px/1 "Calibri", sans-serif;
+	text-align: center;
+	margin-left: 200px;
+}
+
+.my-cta-button:hover{
+    color: #582394;
+    border: 2px solid #4d089a;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+
+/* Result */
+.results{
+    padding: 30px 0 0;
+	flex: 1 0 auto;
+}
+
+.danger{
+    color: #ff0000;
+}
+
+.safe{
+    color: green;
+}
+.rows{
+	margin-bottom: -15px;
+}
+.b1{
+	background-color: #c4d5f2;
+}

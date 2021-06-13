@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Early Stage Diabetes Risk Prediction</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for(endpoint='static', filename='bootstrap.min.css')}}"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+    </head>
+
+    <body class="b1">
+        <!-- Website Title -->
+    	<div class="container1">
+            <h2 class='container-heading1'><span class="heading_font">Early Stage Diabetes Risk Prediction</span></h2>
+    	</div>
+        <!-- Text Area -->
+<div class="ml-container">
+<form action="{{ url_for('predict') }}" method="POST" style="margin-left: 250px;">
+    <div class="container">
+
+  <div class="row rows">
+    <div class="col-md-4"><label for="ageId" >How old are you?</label></div>
+    <div class="col-md-4"><input class="" type="text" name="Age" id="ageId" placeholder="Age"></div>
+  </div>
+  <br>
+  <div class="row rows">
+    <div class="col-md-4 ">
+    <label>Gender</label>
+    </div>
+    <div class="col-md-4 "> 
+    <label class="radio-inline">
+    <input type="radio" name="sexradio"  value="1">Male 
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="sexradio" value="0" >Female
+    </label> 
+    </div>
+    </div>
+  <br>
+  
+  <div class="row rows">
+    <div class="col-md-4"><label>Do you have Polyuria?</label> </div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Polyuriaradio" value="1" >Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Polyuriaradio" value="0">No
+    </label> 
+    </div>
+  </div>
+  <br>
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Polydipsia?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Polydipsiaradio"  value="1">Yes 
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Polydipsiaradio" value="0" >No
+    </label> </div>
+  </div>
+  <br>
+   <div class="row rows">
+    <div class="col-md-4 "><label>Have You Had Sudden Weight loss?</label></div>
+    <div class="col-md-4 "> <label class="radio-inline">
+    <input type="radio" name="Sudden_weight_lossradio" value="1" >Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Sudden_weight_lossradio" value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4 "><label>Do you have a Weakness?</label></div>
+    <div class="col-md-4 "><label class="radio-inline">
+    <input type="radio" name="Weaknessradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Weaknessradio" value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Polyphagia?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Polyphagiaradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Polyphagiaradio"value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"> <label>Do you have Genital Thrush?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Genital_thrushradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Genital_thrushradio"value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"> <label>Do you have Visual Blurring?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Visual_blurringradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Visual_blurringradio" value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Itching?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Itchingradio" value="1" >Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Itchingradio" value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows" >
+    <div class="col-md-4"><label>Do you feel Irritability?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Irritabilityradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Irritabilityradio"value="0" >No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Delayed Healing?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Delayed_healing_radio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Delayed_healing_radio"value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Partial Paresis?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Partial_paresisradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Partial_paresisradio"value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Muscle Stiffness?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Muscle_stiffnessradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Muscle_stiffnessradio"value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Do you have Alopecia?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Alopeciaradio" value="1" >Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Alopeciaradio" value="0">No
+    </label></div>
+  </div>
+  <br>
+  
+   <div class="row rows">
+    <div class="col-md-4"><label>Have you been Obese?</label></div>
+    <div class="col-md-4"><label class="radio-inline">
+    <input type="radio" name="Obesityradio" value="1">Yes
+    </label>
+    <label class="radio-inline">
+    <input type="radio" name="Obesityradio"value="0">No
+    </label></div>
+  </div>
+  <br>
+   <div class="row rows">
+    <div class="col "></div>
+    <div class="col "></div>
+  </div>
+  <br>
+<input type="submit" class="my-cta-button" value="Predict">
+</form>
+</div>
+</body>
+</html>
